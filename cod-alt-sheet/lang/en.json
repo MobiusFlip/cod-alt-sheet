@@ -1,0 +1,30 @@
+{
+    "MTA.skills_physical": {
+        "archery": "Archery"
+    },
+    "MTA.skills_mental": {
+        "enigmas": "Enigmas"
+    },
+    "MTA.skills_social": {
+        "ride": "Ride"
+    },
+    "MTA.disciplines_unique": {
+        "cruac": "Crúac"
+    },
+    "MTA.disciplines_common": {
+        "auspex": "Auspex",
+        "dominate": "Dominate",
+        "majesty": "Majesty",
+        "nightmare": "Nightmare",
+        "protean": "Protean"
+    },
+    "MTA.TooltipCalcMaxWillpower": "Calculate maximum Willpower.",
+    "MTA.Head": "Head",
+    "MTA.Eyes": "Eyes",
+    "MTA.Ears": "Ears",
+    "MTA.Neck": "Neck",
+    "MTA.Hands": "Hands",
+    "MTA.Feet": "Feet",
+    "MTA.TooltipDotToggle": "Toggle Attribute and Skill displays between 5 dots or 10 dots.",
+    "MTA.AgeAtDeath": "Age at Death"
+}

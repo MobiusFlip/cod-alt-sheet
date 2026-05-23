@@ -1,0 +1,79 @@
+{
+    "id": "cod-alt-sheet",
+    "title": "Chronicles of Darkness Alternate Sheet",
+    "description": "Alternate character sheet for the Chronicles of Darkness 2e system.",
+    "version": "0.1.0",
+    "url": "https://github.com/MobiusFlip/cod-alt-sheet/tree/master",
+    "manifest": "https://raw.githubusercontent.com/MobiusFlip/cod-alt-sheet/master/cod-alt-sheet/module.json",
+    "download": "https://github.com/MobiusFlip/cod-alt-sheet/raw/main/cod-alt-sheet.zip",
+    "authors": [
+        {
+            "name": "MobiusFlip"
+        }
+    ],
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13"
+    },
+    "relationships": {
+        "systems": [
+            {
+                "id": "mta",
+                "type": "system",
+                "compatibility": {}
+            }
+        ]
+    },
+    "esmodules": [
+        "main.mjs",
+        "scripts/alt-sheet.js"
+    ],
+    "styles": [
+        "styles/alt-sheet.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+  "packs": [
+    {
+      "name": "merits",
+      "label": "Merits",
+      "path": "packs/merits",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    },
+    {
+      "name": "discipline-powers",
+      "label": "Discipline Powers",
+      "path": "packs/discipline-powers",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    },
+    {
+      "name": "conditions-and-tilts",
+      "label": "Conditions and Tilts",
+      "path": "packs/conditions-and-tilts",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    }
+  ]
+}

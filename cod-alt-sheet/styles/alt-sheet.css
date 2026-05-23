@@ -1,0 +1,212 @@
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #c4b4b4;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dot.filled {
+    background: white;
+}
+
+.dot.bonus {
+    background: #40aa40;
+}
+
+.dot.penalty {
+    background: rgb(128, 0, 0);
+}
+
+.dot-gap {
+    width: 3px;
+}
+
+.overflow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #008000;
+    position: absolute;
+}
+
+.characterSheet .statBox.narrow{
+    font-size:120%;
+}
+
+.characterSheet .statBox.narrow.health{
+    flex-basis: 144px;
+    flex-grow: 0;
+}
+
+.kMageTracker[data-type='willpower'] .boxes {
+    min-width: 7.7rem;
+    max-width: 7.7rem;
+}
+
+.kMageTracker[data-type='willpower'] .niceNumber {
+    visibility: hidden;
+}
+    
+.kMageTracker.willpower .boxes > div{ 
+  background: linear-gradient(#44b8d2bf, #1c7684a3), url(../ui/rock.jpg) repeat;
+}
+
+/**
+.kMageTracker.willpower[data-type='willpower'] .boxes > div[data-state='1'] {
+  background: linear-gradient(to bottom right, transparent, transparent calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% + var(--halfLineWidth)), transparent calc(50% + var(--halfLineWidth)) ), linear-gradient(#6495de, #0c254e), url(../ui/rock.jpg) repeat;
+}
+**/
+
+.kMageTracker.willpower[data-type='willpower'] .boxes > div[data-state='1'] {
+  background: linear-gradient(to bottom right, transparent, transparent calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% + var(--halfLineWidth)), transparent calc(50% + var(--halfLineWidth)) ), linear-gradient(to bottom left, transparent, transparent calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% - var(--halfLineWidth)), var(--stateLineColour) calc(50% + var(--halfLineWidth)), transparent calc(50% + var(--halfLineWidth)) ), linear-gradient(#b060f1ad, #310a65ad), url(../ui/rock.jpg) repeat;
+}
+
+.characterSheet .derivedGrid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto;
+    align-items: center;
+    gap: 4px 12px;
+    width: 100%;
+    flex: 0 0 100%;
+    grid-auto-flow: row;
+}
+.characterSheet .derivedGrid > input {
+  width: 3rem;
+  /**
+  color: var(--color-input-disabled);
+  white-space: nowrap;
+  **/
+  /*margin-left: .5rem;*/
+}
+.characterSheet .derivedGrid > input.positive {
+  color: var(--color-input-buffed-positive);
+}
+.characterSheet .derivedGrid > input.negative {
+  color: var(--color-input-buffed-negative);
+}
+
+.characterSheet .armorSection {
+    margin-top: 0.5rem;
+}
+.characterSheet .armorRow {
+    display: grid;
+    grid-template-columns: 4rem auto;
+    align-items: center;
+    column-gap: 0.35rem;
+}
+.characterSheet .armorBreakdown {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 4rem;
+    row-gap: 2px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    padding-top:4px;
+}
+.characterSheet .armorValue {
+    min-width: unset;
+    text-align: center;
+}
+.characterSheet .armor-toggle {
+    cursor: pointer;
+}
+.characterSheet .armorToggleRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+.characterSheet .statBox .dots {
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.characterSheet .statBox h4 {
+    font-size: 1.1rem;
+}
+
+.mta-sheet .item-stat-block .form-line > .armorCoverage {
+  grid-column-end: span 5;
+}
+
+.characterSheet .traitsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 0.5rem;
+    align-items: start;
+}
+
+.characterSheet .textGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 0.5rem;
+    align-items: start;
+}
+
+.characterSheet .item-stat-block .form-line input[type="text"]{
+    width: 9rem;
+}
+.characterSheet .item-stat-block .form-line > label{
+    flex: 0 1 1rem;
+}
+.characterSheet .item-stat-block .form-line {
+    grid-template-columns: 4.5rem auto;
+}
+.characterSheet .item-stat-block .form-line:has(> input[type="number"]){
+    grid-template-columns: 8.5rem auto;
+}
+.mta-sheet .item-stat-block .traitsGrid > .form-line {
+    margin-top: 0;
+}
+.mta-sheet .item-stat-block .textGrid > .form-line {
+    margin-top: 0;
+}
+
+.characterSheet .traitsGrid .touchstoneColumn {
+    grid-column: 3;
+    grid-row: 1 / span 6;
+}
+
+
+.characterSheet li.discipline .dots {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+
+/** TEXT COLORS
+:root {
+  --color-text-windowContent: white;
+  --color-text-sheetBody: #c4b4b4;
+  --color-message: #ffffff;
+
+  --color-header-table-first: #c18b5a;
+  --color-header-table: #f0f0e0;
+  --border-img-item: 1px ridge #664b44;
+  --background-color-img-item: #332521;
+  --box-shadow-img-item: inset 0 0 1px 1px #252517;
+  --background-image-img-item-hoverName: url("../icons/gui/d10.svg") !important;
+  --background-image-img-item-hover: url("../icons/gui/d10-active.svg") !important;
+  --color-itemName-hover: #26ccee;
+  --color-header-hover: aqua;
+  --color-input: darkgray;
+  --color-input-disabled: white;
+  --color-input-buffed-positive: #74d244;
+  --color-input-buffed-negative: #d8464e;
+}
+**/
