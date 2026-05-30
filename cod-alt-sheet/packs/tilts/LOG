@@ -1,1 +1,5 @@
-2026/05/29-17:20:22.792 7dc Delete type=3 #1
+2026/05/29-23:51:30.368 54ec Recovering log #3
+2026/05/29-23:51:30.368 54ec Level-0 table #5: started
+2026/05/29-23:51:30.371 54ec Level-0 table #5: 11490 bytes OK
+2026/05/29-23:51:30.377 54ec Delete type=0 #3
+2026/05/29-23:51:30.377 54ec Delete type=3 #2
