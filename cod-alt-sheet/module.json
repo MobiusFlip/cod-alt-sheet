@@ -2,7 +2,7 @@
     "id": "cod-alt-sheet",
     "title": "Chronicles of Darkness Alternate Sheet",
     "description": "Alternate character sheet for the Chronicles of Darkness 2e system.",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "url": "https://github.com/MobiusFlip/cod-alt-sheet/tree/master",
     "manifest": "https://raw.githubusercontent.com/MobiusFlip/cod-alt-sheet/master/cod-alt-sheet/module.json",
     "download": "https://github.com/MobiusFlip/cod-alt-sheet/raw/main/cod-alt-sheet.zip",
