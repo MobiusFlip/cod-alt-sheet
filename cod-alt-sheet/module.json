@@ -52,9 +52,45 @@
       "flags": {}
     },
     {
+      "name": "covenant-powers",
+      "label": "Covenant Powers",
+      "path": "packs/covenant-powers",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    },
+    {
+      "name": "devotions",
+      "label": "Devotions",
+      "path": "packs/devotions",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    },
+    {
       "name": "discipline-powers",
       "label": "Discipline Powers",
       "path": "packs/discipline-powers",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "mta",
+      "flags": {}
+    },
+    {
+      "name": "equipment",
+      "label": "Equipment",
+      "path": "packs/equipment",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",

@@ -201,6 +201,52 @@ Hooks.once("ready", () => {
         }
     );
 
+    const firearmSheets = Object.values(CONFIG.Item.sheetClasses.firearm);
+    const baseFirearms = firearmSheets.find(s => s.default)?.cls ?? firearmSheets[0]?.cls;
+    if(!baseFirearms) {
+        console.error("Base armor sheet not found");
+        return;
+    }
+
+    class AltFirearmSheet extends baseFirearms {
+        get template() {
+            return "modules/cod-alt-sheet/templates/items/firearm.html";
+        }
+    }
+
+    Items.registerSheet(
+        "cod-alt-sheet",
+        AltFirearmSheet,
+        {
+        types: ["firearm"],
+        makeDefault: false,
+        label: "Alt Firearm Sheet"
+        }
+    );
+
+    const devotionSheets = Object.values(CONFIG.Item.sheetClasses.devotion);
+    const baseDevotions = devotionSheets.find(s => s.default)?.cls ?? firearmSheets[0]?.cls;
+    if(!baseDevotions) {
+        console.error("Base devotion sheet not found");
+        return;
+    }
+
+    class AltDevotionSheet extends baseDevotions {
+        get template() {
+            return "modules/cod-alt-sheet/templates/items/devotion.html";
+        }
+    }
+
+    Items.registerSheet(
+        "cod-alt-sheet",
+        AltDevotionSheet,
+        {
+        types: ["devotion"],
+        makeDefault: false,
+        label: "Alt Devotion Sheet"
+        }
+    )
+
     const sheets = Object.values(CONFIG.Actor.sheetClasses.character);
     const baseSheet = sheets[0]?.cls;
 

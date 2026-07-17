@@ -17,4 +17,6 @@ Hooks.once("init", function() {
     delete CONFIG.MTA.disciplines_unique.protean;
     CONFIG.MTA.disciplines_unique.cruac = "Crúac"
     delete CONFIG.MTA.disciplines_common.cruac;
+
+    CONFIG.MTA.firearmTypes = ["Athletics", "Archery", "Firearms"]
 })

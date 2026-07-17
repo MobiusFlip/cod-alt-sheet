@@ -140,7 +140,7 @@
                 <span> {{item.name}} </span>
               </div>
             </td>
-            <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.cost.value}} {{localize "MTA.Vitae"}} {{#if system.cost.perTurn}} (turn) {{/if}} </td>
+            <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.cost}} </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.action}} </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> 
               {{#if system.effects }}<i class="activeIcon {{#if system.effectsActive}} fas {{else}} far {{/if}} fa-dot-circle" title="Effects active" data-item-id="{{item._id}}"></i>{{/if}}

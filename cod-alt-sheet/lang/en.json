@@ -26,5 +26,8 @@
     "MTA.Hands": "Hands",
     "MTA.Feet": "Feet",
     "MTA.TooltipDotToggle": "Toggle Attribute and Skill displays between 5 dots or 10 dots.",
-    "MTA.AgeAtDeath": "Age at Death"
+    "MTA.AgeAtDeath": "Age at Death",
+    "MTA.CharacterDescription": "Character Description",
+    "MTA.Description": "Other Notes",
+    "MTA.FirearmType": "Ranged Type"
 }

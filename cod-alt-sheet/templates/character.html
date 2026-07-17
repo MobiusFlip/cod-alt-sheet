@@ -1090,8 +1090,8 @@
                 </div>
                 {{/if}}
                 <div class="form-line">
-                    <label class="wide">{{localize "MTA.Description"}}</label>
-                    <textarea class="wide" name="system.description" placeholder="Character Description">{{system.description}}</textarea>
+                    <label class="wide">{{localize "MTA.CharacterDescription"}}</label>
+                    <textarea class="wide" name="system.character_desc" placeholder="Character Description">{{system.character_desc}}</textarea>
                 </div>
             </div>
         </div>
@@ -1171,9 +1171,9 @@
         {{/if}}
         <div class="item-stat-block">
           <div class="form-line">
-            <label class="wide"> {{localize "MTA.Notes"}} </label>
+            <label class="wide"> {{localize "MTA.Description"}} </label>
             <div class="wide editor-container">
-              {{editor enrichedDescription target="system.notes" button=true owner=owner editable=editable}}
+              {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
             </div>
           </div>
         </div>

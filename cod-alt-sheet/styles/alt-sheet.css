@@ -188,6 +188,10 @@
     margin-left: auto;
 }
 
+.mta-sheet .forms-column.tooltip .tooltip-text {
+  left: 0;
+}
+
 
 /** TEXT COLORS
 :root {
