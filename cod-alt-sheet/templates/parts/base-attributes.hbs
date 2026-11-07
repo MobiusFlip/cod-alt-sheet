@@ -78,7 +78,7 @@
     <div class="attributes-flexrow">
         <ol class="attributes-list {{#if owodAttributeOrdering}}owod-mental{{/if}}">
             <li class="attributes-header flexrow">
-                {{#if (eqAny system.characterVariant "mage" "scelesti")}}<span class="attribute-key">{{ localize "MTA.Rote"
+                {{#if system.typeConf.sheet.roteSkills}}<span class="attribute-key">{{ localize "MTA.Rote"
                     }}</span>{{/if}}
                 <span class="attribute-key">{{ localize "MTA.Skill" }}</span>
                 <span class="attribute-valueHeader">{{ localize "MTA.Value" }}</span>
@@ -89,7 +89,7 @@
         </ol>
         <ol class="attributes-list {{#if owodAttributeOrdering}}owod-physical{{/if}}">
             <li class="attributes-header flexrow">
-                {{#if (eqAny system.characterVariant "mage" "scelesti")}}<span class="attribute-key">{{ localize "MTA.Rote"
+                {{#if system.typeConf.sheet.roteSkills}}<span class="attribute-key">{{ localize "MTA.Rote"
                     }}</span>{{/if}}
                 <span class="attribute-key">{{ localize "MTA.Skill" }}</span>
                 <span class="attribute-valueHeader">{{ localize "MTA.Value" }}</span>
@@ -101,7 +101,7 @@
 
         <ol class="attributes-list {{#if owodAttributeOrdering}}owod-social{{/if}}">
             <li class="attributes-header flexrow">
-                {{#if (eqAny system.characterVariant "mage" "scelesti")}}<span class="attribute-key">{{ localize "MTA.Rote"
+                {{#if system.typeConf.sheet.roteSkills}}<span class="attribute-key">{{ localize "MTA.Rote"
                     }}</span>{{/if}}
                 <span class="attribute-key">{{ localize "MTA.Skill" }}</span>
                 <span class="attribute-valueHeader">{{ localize "MTA.Value" }}</span>

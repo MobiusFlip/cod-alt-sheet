@@ -41,29 +41,6 @@
   </ol>
 </div>
 
-    <!--
-    {{#if show.humanity}}
-    <div class="kInput statBox">
-        <h4>
-            <input class="attribute-check" id="Humanity{{actor.id}}" data-attribute="humanity" data-trait="vampire_traits.humanity" type="checkbox" data-dtype="Boolean">
-            <label class="button attribute-button" for="Humanity{{actor.id}}">{{localize "MTA.Humanity"}}</label>
-        </h4>
-        <div class="gold-border"> </div>
-        <div class="form-line">
-            {{#each system.touchstones_vampire as |touchstone key|}}
-                <label class="{{#if (isActiveVampTouchstone key ../system.vampire_traits.humanity.final)}} activeTouchstone {{/if}}"> {{convertVampTouchstone key}} </label> <input name="system.touchstones_vampire.{{key}}" type="text" value="{{touchstone}}" />
-            {{/each}}
-        </div>
-    </div>
-          <div class="form-line">
-            <label class="wide">{{localize "MTA.Touchstones"}}</label>
-            {{#each system.touchstones_vampire as |touchstone key|}}
-              <label class="{{#if (isActiveVampTouchstone key ../system.vampire_traits.humanity.final)}} activeTouchstone {{/if}}"> {{convertVampTouchstone key}} </label> <input name="system.touchstones_vampire.{{key}}" type="text" value="{{touchstone}}" />
-            {{/each}}
-          </div> 
-    {{/if}}
-    -->
-
 <div class="items-block">
   <div class="items-table">
     {{!-- Discipline Powers --}}

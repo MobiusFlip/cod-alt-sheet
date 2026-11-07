@@ -20,8 +20,7 @@
         <div class="bottomCharaBlock">
           <div class="kInput statBox big health">
             <h4 class="{{#if system.isDreaming}}dreaming{{/if}}">
-              <div class="button charMacroButton calculate health tooltip">
-                <span class="tooltip-text">{{ localize "MTA.TooltipCalcMaxHealth" }}</span>
+              <div class="button charMacroButton calculate health" data-tooltip-text="{{ localize 'MTA.TooltipCalcMaxHealth' }}" data-tooltip-direction="UP">
                 <img src="systems/mta/icons/gui/calculate.svg" alt="Calculate max. health.">
               </div>
               {{ localize "MTA.Health" }}
@@ -30,12 +29,12 @@
             <div class="kMageTracker" data-type="health" data-name="system.health" data-states="max/value/lethal/aggravated" data-marked="{{system.health.marked}}" data-max="{{system.health.max}}" data-aggravated="{{system.health.aggravated}}" data-lethal="{{system.health.lethal}}" data-value="{{system.health.value}}"></div>
           </div>
 
-          <div class="kInput statBox narrow health">
-              <h4>
+          <div class="kInput statBox narrow willpower">
+            <h4>
                 {{ localize "MTA.Willpower" }}
-              </h4>
-              <div class="gold-border"> </div>
-              <div class="kMageTracker willpower"
+            </h4>
+            <div class="gold-border"></div>
+            <div class="kMageTracker willpower"
                 data-type="willpower"
                 data-name="system.willpower"
                 data-states="max/value"
@@ -69,7 +68,7 @@
             <div class="description"> {{system.potency}} {{localize "MTA.WillpowerPerTurn"}}</div>
             {{/if}}
           </div>
-           -->
+          -->
 
           {{#if show.wisdom}}
             {{{bigStatBox actor false "mage_traits.wisdom"}}}
@@ -84,39 +83,37 @@
           {{/if}}
           {{#if show.humanity}}
             <div class="kInput statBox big">
-            <h4>
-                <div class="button charMacroButton calculate resource tooltip">
-                <span class="tooltip-text">{{localize "MTA.TooltipCalcMaxVitae"}}</span>
-                <img src="systems/mta/icons/gui/calculate.svg" alt="Calculate max. vitae.">
+                <h4>
+                    <div class="button charMacroButton calculate resource" data-tooltip-text="{{localize 'MTA.TooltipCalcMaxVitae'}}" data-tooltip-direction="UP">
+                    <img src="systems/mta/icons/gui/calculate.svg" alt="Calculate max. vitae.">
+                    </div>
+                    {{localize "MTA.Vitae"}}
+                </h4>
+                <div class="gold-border"></div>
+                <div class="split">
+                    <div class="niceNumber buttonsLeft">
+                    <input name="system.vitae.value" type="number" value="{{system.vitae.value}}" data-dtype="Number">
+                    <div class="numBtns">
+                        <div class="plusBtn">+</div>
+                        <div class="minusBtn">−</div>
+                    </div>
+                    </div>
+                    <span class="delimiter"> / </span>
+                    <div class="niceNumber">
+                    <input name="system.vitae.max" type="number" value="{{system.vitae.max}}" data-dtype="Number">
+                    <div class="numBtns">
+                        <div class="plusBtn">+</div>
+                        <div class="minusBtn">−</div>
+                    </div>
+                    </div>
                 </div>
-                {{localize "MTA.Vitae"}}
-            </h4>
-            <div class="gold-border"></div>
-            <div class="split">
-                <div class="niceNumber buttonsLeft">
-                <input name="system.vitae.value" type="number" value="{{system.vitae.value}}" data-dtype="Number">
-                <div class="numBtns">
-                    <div class="plusBtn">+</div>
-                    <div class="minusBtn">−</div>
+                <div class="description">{{vitae_per_turn}} {{localize "MTA.VitaePerTurn"}}</div>
                 </div>
-                </div>
-                <span class="delimiter"> / </span>
-                <div class="niceNumber">
-                <input name="system.vitae.max" type="number" value="{{system.vitae.max}}" data-dtype="Number">
-                <div class="numBtns">
-                    <div class="plusBtn">+</div>
-                    <div class="minusBtn">−</div>
-                </div>
-                </div>
-            </div>
-            <div class="description">{{vitae_per_turn}} {{localize "MTA.VitaePerTurn"}}</div>
-            </div>
           {{/if}}
           {{#if show.clarity}}
             <div class="kInput statBox big health">
               <h4>
-                <div class="button charMacroButton calculate clarity tooltip">
-                  <span class="tooltip-text">{{ localize "MTA.TooltipCalcMaxClarity" }}</span>
+                <div class="button charMacroButton calculate clarity" data-tooltip-text="{{ localize 'MTA.TooltipCalcMaxClarity' }}" data-tooltip-direction="UP">
                   <img src="systems/mta/icons/gui/calculate.svg" alt="Calculate max. clarity.">
                 </div>
                 <input class="attribute-check" id="Clarity{{actor.id}}" data-attribute="clarity" data-trait="clarity.value" type="checkbox" data-dtype="Boolean">
@@ -180,8 +177,7 @@
           {{#if show.pyrosPandoran}}
             <div class="kInput statBox big">
               <h4>
-                <div class="button charMacroButton calculate resource tooltip">
-                  <span class="tooltip-text">{{localize "MTA.TooltipCalcMaxPyros"}}</span>
+                <div class="button charMacroButton calculate resource" data-tooltip-text="{{localize 'MTA.TooltipCalcMaxPyros'}}" data-tooltip-direction="UP">
                   <img src="systems/mta/icons/gui/calculate.svg" alt="Calculate max. pyros.">
                 </div>
                 {{localize "MTA.promethean_traits.pyros"}}
@@ -216,8 +212,7 @@
     {{!-- Sheet Side --}}
     <div class="conditions">
       <div class="character-type">
-        <span class="tooltip left">
-          <span class="tooltip-text">{{ localize "MTA.TooltipTypeVisible" }}</span>
+        <span data-tooltip-text="{{ localize 'MTA.TooltipTypeVisible' }}" data-tooltip-direction="LEFT">
           <label class="checkBox">
             <input data-dtype="Boolean" name="system.isTypeKnown" type="checkbox" {{checked system.isTypeKnown}}>
             <span></span>
@@ -300,7 +295,6 @@
           {{/if}}
         {{/if}}
       </div>
-      {{#if show.potency}}
       <div class="horrorHeader {{#if system.usesDreadPowers}}active{{/if}}">
         <label> {{localize "MTA.usesDreadPowers"}} </label>
         <label class="checkBox">
@@ -308,12 +302,10 @@
           <span></span>
         </label>
       </div>
-      {{/if}}
       <!-- Block #1 -->
       <div class="expBox">
         <div>
-          <div class="button charMacroButton progress tooltip">
-            <span class="tooltip-text">{{ localize "MTA.TooltipProgressMenu" }}</span>
+          <div class="button charMacroButton progress" data-tooltip-text="{{ localize 'MTA.TooltipProgressMenu' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/progress-menu.svg" alt="Open progress menu.">
           </div>
           <div>
@@ -398,7 +390,6 @@
             {{/with}}
         </div>
       </div>
-
         <!--
         <div class="armourGrid">
           {{#each derivedTraits as |cvalue ckey|}}
@@ -593,7 +584,9 @@
                       <span> {{item.name}} </span>
                     </div>
                   </td>
-                  <td class="cell {{#if @last}} lastRow {{/if}}">{{system.rating}}</td>
+                  {{#if ../enableNuminaRating}}
+                    <td class="cell {{#if @last}} lastRow {{/if}}">{{system.rating}}</td>
+                  {{/if}}
                   <td class="cell {{#if @last}} lastRow {{/if}}">{{convertBool system.reaching}}</td>
                   <td class="cell {{#if @last}} lastRow {{/if}}"> 
                     {{#if system.effects }}<i class="activeIcon {{#if system.effectsActive}} fas {{else}} far {{/if}} fa-dot-circle" title="Effects active" data-item-id="{{item._id}}"></i>{{/if}}
@@ -753,67 +746,55 @@
 
     <div class="characterMacroPanel">
       <div>
-        <div class="button charMacroButton rollButton tooltip">
-          <span class="tooltip-text">{{ localize "MTA.TooltipSkillTest" }}</span>
+        <div class="button charMacroButton rollButton" data-tooltip-text="{{ localize 'MTA.TooltipSkillTest' }}" data-tooltip-direction="UP">
           <img src="systems/mta/icons/gui/d10.svg" alt="Skill check.">
         </div>
-        <div class="button charMacroButton perceptionButton tooltip">
-          <span class="tooltip-text">{{ localize "MTA.TooltipPerceptionCheck" }}</span>
+        <div class="button charMacroButton perceptionButton" data-tooltip-text="{{ localize 'MTA.TooltipPerceptionCheck' }}" data-tooltip-direction="UP">
           <img src="systems/mta/icons/gui/perception.svg" alt="Perception check.">
         </div>
         {{#if show.macro_spell}}
-          <div class="button charMacroButton improvisedSpellButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.TooltipSpellCast" }}</span>
+          <div class="button charMacroButton improvisedSpellButton" data-tooltip-text="{{ localize 'MTA.TooltipSpellCast' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-improvisedSpell.svg" alt="Improvised spell cast.">
           </div>
-          <div class="button charMacroButton mageSightButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.MageSight" }}</span>
+          <div class="button charMacroButton mageSightButton" data-tooltip-text="{{ localize 'MTA.MageSight' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-mageSight.svg" alt="Mage sight.">
           </div>
-          <div class="button charMacroButton scourPatternButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.ScourPattern" }}</span>
+          <div class="button charMacroButton scourPatternButton" data-tooltip-text="{{ localize 'MTA.ScourPattern' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-scoured-pattern.svg" alt="Scour Pattern.">
           </div>
         {{/if}}
         {{#if (eqAny system.characterVariant "mortal" "sleepwalker" "proximi" "ghoul" "hunter")}}
-          <div class="button charMacroButton breakingPointButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.TooltipBreakingPoint" }}</span>
+          <div class="button charMacroButton breakingPointButton" data-tooltip-text="{{ localize 'MTA.TooltipBreakingPoint' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-breaking-point.svg" alt="Breaking point.">
           </div>
         {{/if}}
         {{#if (eq system.characterVariant "mortal")}}
-          <div class="button charMacroButton dissonanceButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.TooltipDissonance" }}</span>
+          <div class="button charMacroButton dissonanceButton" data-tooltip-text="{{ localize 'MTA.TooltipDissonance' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-dissonance.svg" alt="Dissonance.">
           </div>
         {{/if}}
         {{#if (eq system.characterType "demon")}}
-          <div class="button charMacroButton compromiseButton tooltip">
-            <span class="tooltip-text">{{ localize "MTA.TooltipCoverCompromise" }}</span>
+          <div class="button charMacroButton compromiseButton" data-tooltip-text="{{ localize 'MTA.TooltipCoverCompromise' }}" data-tooltip-direction="UP">
             <img src="systems/mta/icons/gui/macro-compromise.svg" alt="Compromise.">
           </div>
         {{/if}}
-        <div class="button charMacroButton dreamingButton tooltip {{#if system.isDreaming}}dreaming{{/if}}">
-          <span class="tooltip-text">{{ localize "MTA.TooltipDreaming" }}</span>
+        <div class="button charMacroButton dreamingButton {{#if system.isDreaming}}dreaming{{/if}}" data-tooltip-text="{{ localize 'MTA.TooltipDreaming' }}" data-tooltip-direction="UP">
           <img src="systems/mta/icons/gui/macro-dreaming.svg" alt="Dream.">
         </div>
         {{#if show.macro_amnion}}
           {{#if system.isDreaming}}
-            <div class="button charMacroButton amnionButton tooltip dreaming">
-              <span class="tooltip-text">{{ localize "MTA.TooltipAmnion" }}</span>
+            <div class="button charMacroButton amnionButton dreaming" data-tooltip-text="{{ localize 'MTA.TooltipAmnion' }}" data-tooltip-direction="UP">
               <img src="systems/mta/icons/gui/macro-amnion.svg" alt="Amnion.">
             </div>
           {{/if}}
         {{/if}}
         {{#if show.conviction}}
-        <div class="button charMacroButton falteringButton tooltip">
-          <span class="tooltip-text">{{ localize "MTA.TooltipFalteringRoll" }}</span>
+        <div class="button charMacroButton falteringButton" data-tooltip-text="{{ localize 'MTA.TooltipFalteringRoll' }}" data-tooltip-direction="UP">
           <img src="systems/mta/icons/gui/macro-faltering.svg" alt="{{ localize "MTA.TooltipFalteringRoll" }}">
         </div>
         {{/if}}
-        <div class="button charMacroButton toggleDots tooltip">
-            <span class="tooltip-text">{{localize "MTA.TooltipDotToggle"}}</span>
-            <img src="systems/mta/icons/gui/macro-amnion.svg" alt="Amnion.">
+        <div class="button charMacroButton toggleDots" data-tooltip-text="{{ localize 'MTA.TooltipDotToggle' }}" data-tooltip-direction="UP">
+            <img src="systems/mta/icons/gui/macro-amnion.svg" alt="{{ localize 'MTA.TooltipDotToggle' }}">
         </div>
       </div>
     </div>
@@ -1084,15 +1065,17 @@
                     <label class="wide">{{localize "MTA.Banes"}}</label>
                     <textarea class="wide" name="system.banes" placeholder="Banes">{{system.banes}}</textarea>
                 </div>
-                <div class="form-line">
-                    <label class="wide">{{localize "MTA.Touchstones"}}</label>
-                    <textarea class="wide" name="system.touchstones_desc" placeholder="Touchstone Descriptions">{{system.touchstones_desc}}</textarea>
-                </div>
                 {{/if}}
                 <div class="form-line">
                     <label class="wide">{{localize "MTA.CharacterDescription"}}</label>
                     <textarea class="wide" name="system.character_desc" placeholder="Character Description">{{system.character_desc}}</textarea>
                 </div>
+                {{#if (eq system.characterType "vampire")}}
+                <div class="form-line">
+                    <label class="wide">{{localize "MTA.Touchstones"}}</label>
+                    <textarea class="wide" name="system.touchstones_desc" placeholder="Touchstone Descriptions">{{system.touchstones_desc}}</textarea>
+                </div>
+                {{/if}}
             </div>
         </div>
         {{!-- Relationships --}}

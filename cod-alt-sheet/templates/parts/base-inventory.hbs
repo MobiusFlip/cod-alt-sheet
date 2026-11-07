@@ -25,14 +25,13 @@
       <tbody>
         {{#each inventory.firearm.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}
               </div>
             </td>
-            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing tooltip {{/if}}"> {{system.damage}}
-              {{#if system.penetration}} <span class="tooltip-text"> {{ localize "MTA.ArmorPiercing" }} {{system.penetration}} </span> {{/if}}
+            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing {{/if}}" {{#if system.penetration}}data-tooltip-text="{{ localize 'MTA.ArmorPiercing' }} {{system.penetration}}" data-tooltip-direction="UP"{{/if}}> {{system.damage}}
             </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.ranges.short}} / {{system.ranges.medium}} / {{system.ranges.long}} </td>
             <td class="cell {{#if @last}} lastRow {{/if}}">
@@ -42,8 +41,7 @@
               {{/if}}
             </td>
             <td class="cell {{#if @last}} lastRow {{/if}}">
-              <span class="button item-magValue tooltip" data-item-id="{{item._id}}">
-                <span class="tooltip-text"> {{ localize "MTA.TooltipMagazine" }} </span>
+              <span class="button item-magValue" data-item-id="{{item._id}}" data-tooltip-text="{{ localize 'MTA.TooltipMagazine' }}" data-tooltip-direction="UP">
                 {{#if system.magazine}}
                   {{system.magazine.system.quantity}}
                 {{else}} 0
@@ -54,8 +52,7 @@
             <td class="cell reload-cell {{#if @last}} lastRow {{/if}}">
               {{#if system.magazine}}
                 <span class="stoneButton button item-reload reloaded fas fa-eject" data-item-id="{{item._id}}" title="Eject"></span>
-              {{else}} <span class="stoneButton button item-reload fas fa-sync-alt tooltip" data-item-id="{{item._id}}">
-                  <span class="tooltip-text"> {{ localize "MTA.TooltipReload" }} </span>
+              {{else}} <span class="stoneButton button item-reload fas fa-sync-alt" data-item-id="{{item._id}}" data-tooltip-text="{{ localize 'MTA.TooltipReload' }}" data-tooltip-direction="UP">
                 </span>
               {{/if}}
             </td>
@@ -76,6 +73,7 @@
         {{/each}}
       </tbody>
     </table>
+
 
     {{!-- Melee --}}
     <table class="item-table">
@@ -100,14 +98,13 @@
       <tbody>
         {{#each inventory.melee.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}}data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}}data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}
               </div>
             </td>
-            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing tooltip {{/if}}"> {{system.damage}}
-              {{#if system.penetration}} <span class="tooltip-text"> Armour Piercing {{system.penetration}} </span> {{/if}}
+            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing {{/if}}" {{#if system.penetration}}data-tooltip-text="{{ localize 'MTA.ArmorPiercing' }} {{system.penetration}}" data-tooltip-direction="UP"{{/if}}> {{system.damage}}
             </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.weaponType}} </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.initiativeMod}} </td>
@@ -203,7 +200,7 @@
       <tbody>
         {{#each inventory.ammo.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}
@@ -249,7 +246,7 @@
       <tbody>
         {{#each inventory.equipment.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}
@@ -298,14 +295,13 @@
       <tbody>
         {{#each inventory.explosive.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}}data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}}data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>
               </div>
             </td>
-            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing tooltip {{/if}}"> {{system.damage}}
-              {{#if system.penetration}} <span class="tooltip-text"> Armour Piercing {{system.penetration}} </span> {{/if}}
+            <td class="cell {{#if @last}} lastRow {{/if}} {{#if system.penetration}} piercing {{/if}}" {{#if system.penetration}}data-tooltip-text="{{ localize 'MTA.ArmorPiercing' }} {{system.penetration}}" data-tooltip-direction="UP"{{/if}}> {{system.damage}}
             </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.initiativeMod}} </td>
             <td class="cell {{#if @last}} lastRow {{/if}}"> {{system.blastArea}} </td>
@@ -350,7 +346,7 @@
       <tbody>
         {{#each inventory.container.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}
@@ -435,7 +431,7 @@
       <tbody>
         {{#each inventory.vehicle.items as |item iid|}}
           <tr class="item-row item" data-item-id="{{item._id}}">
-            <td class="cell item-name first {{#if @last}} lastRow {{/if}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
+            <td class="cell item-name first {{#if @last}} lastRow {{/if}} magic-{{system.magicClass}}" {{#if system.isMagical}}style="color: {{getMagicalColor system.magicType system.magicClass}}"{{/if}} data-item-id="{{item._id}}">
               <div class="item-name-wrapper">
                 <div class="item-image {{#if system.equipped}} equipped {{/if}}" style="background-image: url({{item.img}})"></div>
                 <span> {{item.name}} </span>{{#if system.mana.max}}<span class="magic-resource">[{{system.mana.value}}/{{system.mana.max}}]</span>{{/if}}

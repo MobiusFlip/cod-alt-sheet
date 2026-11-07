@@ -1,5 +1,3 @@
-2026/07/16-16:18:03.179 4bc8 Recovering log #5
-2026/07/16-16:18:03.180 4bc8 Level-0 table #7: started
-2026/07/16-16:18:03.185 4bc8 Level-0 table #7: 115892 bytes OK
-2026/07/16-16:18:03.191 4bc8 Delete type=0 #5
-2026/07/16-16:18:03.191 4bc8 Delete type=3 #4
+2026/11/06-20:23:05.813 7b2c Recovering log #19
+2026/11/06-20:23:05.818 7b2c Delete type=0 #19
+2026/11/06-20:23:05.818 7b2c Delete type=3 #18

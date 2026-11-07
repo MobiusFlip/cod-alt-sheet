@@ -95,7 +95,9 @@ Hooks.once("init", async () => {
 
         const isAttribute = traitName.split('.')[0] === "attributes_mental" || traitName.split('.')[0] === "attributes_physical" || traitName.split('.')[0] === "attributes_social";
         const isSkill = traitName.split('.')[0] === "skills_physical" || traitName.split('.')[0] === "skills_social" || traitName.split('.')[0] === "skills_mental";
-        const canBeRoteSkill = (actor.system.characterVariant === "mage" || actor.system.characterVariant === "scelesti") && isSkill; // FIXME: or scelesti, etc.
+        const canBeRoteSkill = (actor.system.typeConf.sheet.roteSkills) && isSkill; // FIXME: or scelesti, etc.
+        const specialties = Array.isArray(trait.specialties) ? trait.specialties : [];
+        const specialtyTooltip = specialties.map(specialty => `<li>${Handlebars.escapeExpression(specialty)}</li>`).join("");
 
         const isArcanum = traitName.split('.')[0] === "arcana_subtle" || traitName.split('.')[0] === "arcana_gross";
         const isRenown = traitName.split('.')[0] === "werewolf_renown";
@@ -134,13 +136,13 @@ Hooks.once("init", async () => {
                 <span class="button pillar-state ${trait.isPrimary ? 'primary' : ''}" title="${trait.isPrimary ? game.i18n.localize('MTA.Mummy.primaryPillar') : ''}" data-trait="${traitName}"></span>
                 ` : ''}
                 ${isSkill ? `
-                <span class="button skill-specialty tooltip ${trait.specialties?.length ? 'available' : ''} ${trait.isAssetSkill ? 'asset' : ''}" data-trait="${traitName}"><i class="fa-solid fa-diamond"></i>
-                ${trait.specialties?.length ? `
-                    <span class="tooltip-text">
+                <span class="button skill-specialty ${specialties.length ? 'available' : ''} ${trait.isAssetSkill ? 'asset' : ''}" data-trait="${traitName}" ${specialties.length ? 'data-mta-tooltip-template data-tooltip-direction="UP" data-tooltip-class="mta-tooltip"' : ''}><i class="fa-solid fa-diamond"></i>
+                ${specialties.length ? `
+                    <template class="mta-tooltip-content">
                     <ul>
-                        ${trait.specialties.reduce((prev, cur) => prev + `<li>${cur}</li>`, '')}
+                        ${specialtyTooltip}
                     </ul>
-                    </span>
+                    </template>
                 `: ''}
                 </span>` : ''}
                 <span>
